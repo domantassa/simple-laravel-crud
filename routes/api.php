@@ -1,7 +1,11 @@
 <?php
 
+use App\Models\CustomUser;
+use App\Http\Controllers\CustomUserController;
+
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -19,3 +23,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 
+Route::resource('users', CustomUserController::class)->except(['show', 'edit', 'create']);
